@@ -11,11 +11,43 @@
             <h2>Thingies</h2>
         </section>
 
-        <section class="nav">blah blah blah</section>
+        <!--After every click, dynamically renders page. No "routing".-->
+        <section class="sidebar">
+            <section class="nav">
+                <div id="nav-pending">
+                    <img src="./images/home.svg" id="nav-icon" />
+                    <span>Pending</span>
+                </div>
+                <div id="nav-completed">
+                    <img src="./images/home.svg" id="nav-icon" />
+                    <span>Completed</span>
+                </div>
+                <div id="nav-deleted">
+                    <img src="./images/home.svg" id="nav-icon" />
+                    <span>Deleted</span>
+                </div>
+            </section>
 
-        <section id="main">This is my content</section>
+            <section class="projects">
+                <div class="projects-header">
+                    <h2>Projects</h2>
+                    <button id="addproject">+</button>
+                </div>
 
-        <section class="footer">This is my footer</section>
+                <div id="project-list"></div>
+            </section>
+        </section>
+
+        <!--Will come back to this later, not sure how to control state in vanilla JS-->
+        <section id="main">
+            <h2 class="nav-name">
+                <div class="task-list"></div>
+            </h2>
+        </section>
+
+        <section class="footer">
+            <p>Hope you enjoyed the project! By Adrian Diaz.</p>
+        </section>
 
         <script src="src/scripts/main.js"></script>
     </body>

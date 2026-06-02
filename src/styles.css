@@ -11,8 +11,8 @@ body {
     grid-template-rows: auto;
     grid-template-areas:
         "header header header"
-        "nav main main"
-        "nav main main"
+        "sidebar main main"
+        "sidebar main main"
         "footer footer footer";
 }
 
@@ -24,12 +24,12 @@ body {
     text-align: center;
 }
 
-/* Navigation */
-.nav {
-    grid-area: nav;
+/* Sidebar naviggation */
+.sidebar {
+    grid-area: sidebar;
 }
 
-/* main */
+/* Main Content */
 #main {
     grid-area: main;
 }
@@ -37,4 +37,7 @@ body {
 /* Footer */
 .footer {
     grid-area: footer;
+    background: grey;
+    padding: 40px;
+    text-align: center;
 }

@@ -1,1 +1,4 @@
-A readme! Please edit this later.
+TODO:
+
+- SVG's for navigation bar
+-
