@@ -19,14 +19,42 @@ body {
 /* Header */
 .header {
     grid-area: header;
-    background: grey;
+    background: rgb(226, 114, 114);
     padding: 40px;
     text-align: center;
 }
 
 /* Sidebar naviggation */
 .sidebar {
+    background: rgb(212, 164, 220);
     grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projects-header {
+    display: flex;
+    gap: 20px;
+}
+
+/* Dynamically created projects */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 /* Main Content */
@@ -37,7 +65,7 @@ body {
 /* Footer */
 .footer {
     grid-area: footer;
-    background: grey;
+    background: rgb(226, 114, 114);
     padding: 40px;
     text-align: center;
 }
