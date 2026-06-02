@@ -6,22 +6,23 @@
 }
 
 body {
+    min-height: 100vh;
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 80px 1fr 80px;
     grid-template-areas:
-        "header header header"
-        "sidebar main main"
-        "sidebar main main"
-        "footer footer footer";
+        "header header"
+        "sidebar main"
+        "footer footer";
 }
 
 /* Header */
 .header {
     grid-area: header;
     background: rgb(226, 114, 114);
-    padding: 40px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Sidebar naviggation */
@@ -57,15 +58,17 @@ body {
     gap: 20px;
 }
 
-/* Main Content */
+/* Main Content. Do this later... */
 #main {
     grid-area: main;
+    background: rgb(145, 177, 196);
 }
 
 /* Footer */
 .footer {
     grid-area: footer;
     background: rgb(226, 114, 114);
-    padding: 40px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
