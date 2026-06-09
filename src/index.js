@@ -15,11 +15,10 @@ document.querySelector("#completed-icon").src = completedIcon;
 document.querySelector("#deleted-icon").src = deletedIcon;
 
 // ----------- MAIN LOGIC -----------
-const title = "blah";
-const description = "blah";
-const dueDate = "blah";
-const priority = "blah";
+let todos = [];
 
-const todo = new Todo(title, description, dueDate, priority);
+// Create ToDo
+const todo = new Todo(title, description, dueDate, priority, status);
 
-console.log(todo);
+// User Actions (Add, delete, edit)
+// Event listener for if add / delete / edit button is clicked. Pass todo object.
