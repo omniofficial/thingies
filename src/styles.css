@@ -40,6 +40,42 @@ body {
     gap: 20px;
 }
 
+#nav-pending {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#pending-icon {
+    width: 40px;
+    height: 40px;
+}
+
+#nav-completed {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#completed-icon {
+    width: 40px;
+    height: 40px;
+}
+
+#nav-deleted {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#deleted-icon {
+    width: 40px;
+    height: 40px;
+}
+
 .projects {
     display: flex;
     flex-direction: column;
