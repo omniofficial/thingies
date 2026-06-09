@@ -17,8 +17,15 @@ document.querySelector("#deleted-icon").src = deletedIcon;
 // ----------- MAIN LOGIC -----------
 let todos = [];
 
-// Create ToDo
-const todo = new Todo(title, description, dueDate, priority, status);
+// Create ToDo (MOCK, FOR DEBUGGING)
+const todo1 = new Todo("Buy milk", "2%", "today", "low", "pending");
+const todo2 = new Todo("Study JS", "Webpack", "tomorrow", "high", "pending");
+todos.push(todo1, todo2);
+console.log(todos);
+
+// DO THIS NEXT. TAKE INPUT FROM FRONTEND
+// Create ToDo (REAL)
+// const todo = new Todo(title, description, dueDate, priority, status);
 
 // User Actions (Add, delete, edit)
 // Event listener for if add / delete / edit button is clicked. Pass todo object.
