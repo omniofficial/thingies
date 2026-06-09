@@ -16,7 +16,7 @@ body {
         "footer footer";
 }
 
-/* Header */
+/* ------------ HEADER ------------*/
 .header {
     grid-area: header;
     background: rgb(226, 114, 114);
@@ -25,7 +25,7 @@ body {
     justify-content: center;
 }
 
-/* Sidebar naviggation */
+/* ------------ SIDEBAR ------------*/
 .sidebar {
     background: rgb(212, 164, 220);
     grid-area: sidebar;
@@ -34,6 +34,7 @@ body {
     gap: 100px;
 }
 
+/* Top of sidebar */
 .nav {
     display: flex;
     flex-direction: column;
@@ -76,6 +77,7 @@ body {
     height: 40px;
 }
 
+/* Bottom of sidebar */
 .projects {
     display: flex;
     flex-direction: column;
@@ -87,20 +89,20 @@ body {
     gap: 20px;
 }
 
-/* Dynamically created projects */
+/* ------------ PROJECTS ------------*/
 .project-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Main Content. Do this later... */
+/* ------------ TODO / MAIN ------------*/
 #main {
     grid-area: main;
     background: rgb(145, 177, 196);
 }
 
-/* Footer */
+/* ------------ FOOTER ------------*/
 .footer {
     grid-area: footer;
     background: rgb(226, 114, 114);
