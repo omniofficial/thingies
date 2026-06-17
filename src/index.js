@@ -8,6 +8,7 @@ import "./styles.css";
 
 // Modules Import
 import { Todo, createTodo, deleteTodo, editTodo } from "./modules/todo";
+import { renderTodos } from "./modules/render";
 
 // ----------- Assets DOM Loading -----------
 document.querySelector("#pending-icon").src = pendingIcon;
@@ -46,6 +47,9 @@ submitButton.addEventListener("click", function (event) {
 
     // Push newTodo into todos array
     todos.push(newTodo);
+
+    // Call renderer
+    renderTodos(todos);
 });
 
 // DOTHISLATER
