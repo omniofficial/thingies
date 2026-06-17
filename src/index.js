@@ -23,7 +23,15 @@ const todo2 = new Todo("Study JS", "Webpack", "tomorrow", "high", "pending");
 todos.push(todo1, todo2);
 console.log(todos);
 
-// DO THIS NEXT. TAKE INPUT FROM FRONTEND
+// Create TODO (REAL)
+const button = document.querySelector("#submit_form");
+const form = document.querySelector("form");
+
+button.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    console.log("Button clicked");
+});
 // Create ToDo (REAL)
 // const todo = new Todo(title, description, dueDate, priority, status);
 
