@@ -100,6 +100,58 @@ body {
 #main {
     grid-area: main;
     background: rgb(145, 177, 196);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Content Title */
+#content-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Input Form */
+#task-create-form {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#task-create-form form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px 12px;
+    width: 100%;
+}
+
+#task-create-form label {
+    display: none;
+}
+
+#task-create-form input,
+#task-create-form select {
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 36px;
+    padding: 0 10px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 0;
+}
+
+#task-create-form select {
+    cursor: pointer;
+}
+
+#main button {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
 }
 
 /* ------------ FOOTER ------------*/
