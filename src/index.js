@@ -7,7 +7,13 @@ import deletedIcon from "./assets/deleted_icon.svg";
 import "./styles.css";
 
 // Modules Import
-import { Todo } from "./modules/todo";
+import {
+    Todo,
+    createTodo,
+    addTodo,
+    deleteTodo,
+    editTodo,
+} from "./modules/todo";
 
 // ----------- Assets DOM Loading -----------
 document.querySelector("#pending-icon").src = pendingIcon;
@@ -31,8 +37,9 @@ button.addEventListener("click", function (event) {
     event.preventDefault();
 
     console.log("Button clicked");
+    createTodo();
 });
-// Create ToDo (REAL)
+
 // const todo = new Todo(title, description, dueDate, priority, status);
 
 // User Actions (Add, delete, edit)
