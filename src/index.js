@@ -18,10 +18,10 @@ document.querySelector("#deleted-icon").src = deletedIcon;
 let todos = [];
 
 // Create TODO (REAL)
-const button = document.querySelector("#submit_form");
+const submitButton = document.querySelector("#submit_form");
 const form = document.querySelector("form");
 
-button.addEventListener("click", function (event) {
+submitButton.addEventListener("click", function (event) {
     event.preventDefault();
 
     console.log("Button clicked");
@@ -46,7 +46,6 @@ button.addEventListener("click", function (event) {
 
     // Push newTodo into todos array
     todos.push(newTodo);
-    console.log(todos);
 });
 
 // DOTHISLATER
