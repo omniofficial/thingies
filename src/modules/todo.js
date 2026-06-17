@@ -12,11 +12,16 @@ export class Todo {
 // Creates a new Todo
 function createTodo(todo) {
     console.log("createTodo triggered");
-}
+    const tempTodo = new Todo(
+        todo.title,
+        todo.description,
+        todo.dueDate,
+        todo.priority,
+        todo.status,
+    );
 
-// Adds a Todo
-function addTodo(todo) {
-    console.log("addTodo triggered");
+    // Return the created todo object
+    return tempTodo;
 }
 
 // Deletes a Todo
@@ -29,4 +34,4 @@ function editTodo(todo) {
     console.log("editTodo triggered");
 }
 
-export { createTodo, addTodo, deleteTodo, editTodo };
+export { createTodo, deleteTodo, editTodo };
