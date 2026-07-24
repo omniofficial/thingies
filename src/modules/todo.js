@@ -34,4 +34,12 @@ function editTodo(todo) {
     console.log("editTodo triggered");
 }
 
+// Sort by Alphabetical Order
+
+// Sort by Due Data
+
+// Sort by Priority
+
+// Sort by Status
+
 export { createTodo, deleteTodo, editTodo };
