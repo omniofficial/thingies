@@ -96,20 +96,13 @@ body {
     gap: 20px;
 }
 
-/* ------------ TODO / MAIN ------------*/
+/* ------------ MAIN (INPUT SECTION) ------------*/
 #main {
     grid-area: main;
     background: rgb(145, 177, 196);
     display: flex;
     flex-direction: column;
     gap: 70px;
-}
-
-/* Content Title */
-#content-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* Input Form */
@@ -151,6 +144,16 @@ body {
     font-size: 15px;
     text-align: center;
     padding: 10px;
+}
+/* ------------ MAIN (CONTENT SECTION) ------------*/
+#content-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content {
+    display: grid;
 }
 
 /* ------------ FOOTER ------------*/
