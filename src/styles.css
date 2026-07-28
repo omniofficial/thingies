@@ -102,7 +102,7 @@ body {
     background: rgb(145, 177, 196);
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 70px;
 }
 
 /* Content Title */
@@ -114,8 +114,7 @@ body {
 
 /* Input Form */
 #task-create-form {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 15px;
 }
 
 #task-create-form form {

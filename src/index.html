@@ -38,61 +38,63 @@
             </section>
         </section>
 
-        <!--Will come back to this later, not sure how to control state in vanilla JS-->
         <section id="main">
-            <h2 id="content-header">Create a TODO item</h2>
+            <section id="input-section">
+                <div id="task-create-form">
+                    <form>
+                        <!-- Todo Title -->
+                        <label for="todo_title">TODO Title: </label>
+                        <input
+                            type="text"
+                            id="todo_title"
+                            name="name"
+                            placeholder="Enter your name"
+                        />
 
-            <div id="task-create-form">
-                <form>
-                    <!-- Todo Title -->
-                    <label for="todo_title">TODO Title: </label>
-                    <input
-                        type="text"
-                        id="todo_title"
-                        name="name"
-                        placeholder="Enter your name"
-                    />
+                        <!-- Todo Description -->
+                        <label for="todo_description">TODO Description: </label>
+                        <input
+                            type="text"
+                            id="todo_description"
+                            name="description"
+                            placeholder="Enter the description"
+                        />
 
-                    <!-- Todo Description -->
-                    <label for="todo_description">TODO Description: </label>
-                    <input
-                        type="text"
-                        id="todo_description"
-                        name="description"
-                        placeholder="Enter the description"
-                    />
+                        <!-- Todo Due Date -->
+                        <label for="todo_dueDate">TODO Due Date: </label>
+                        <input
+                            type="text"
+                            id="todo_dueDate"
+                            name="dueDate"
+                            placeholder="Enter the due date"
+                        />
 
-                    <!-- Todo Due Date -->
-                    <label for="todo_dueDate">TODO Due Date: </label>
-                    <input
-                        type="text"
-                        id="todo_dueDate"
-                        name="dueDate"
-                        placeholder="Enter the due date"
-                    />
+                        <!-- Priority Dropdown -->
+                        <label for="priority">Priority: </label>
+                        <select id="priority" name="priority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
 
-                    <!-- Priority Dropdown -->
-                    <label for="priority">Priority: </label>
-                    <select id="priority" name="priority">
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
+                        <!-- Status Dropdown -->
+                        <label for="status">Status: </label>
+                        <select id="status" name="status">
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                            <option value="deleted">Deleted</option>
+                        </select>
+                    </form>
+                </div>
 
-                    <!-- Status Dropdown -->
-                    <label for="status">Status: </label>
-                    <select id="status" name="status">
-                        <option value="pending">Pending</option>
-                        <option value="completed">Completed</option>
-                        <option value="deleted">Deleted</option>
-                    </select>
-                </form>
-            </div>
+                <!-- Submit -->
+                <button id="submit_form" type="submit">Submit</button>
+            </section>
 
-            <!-- Submit -->
-            <button id="submit_form" type="submit">Submit</button>
-
-            <div id="task-list">blah blah</div>
+            <section id="content-section">
+                <h2 id="content-header">TODO ITEMS BELOW:</h2>
+                <div id="content">blah blah</div>
+            </section>
         </section>
 
         <section class="footer">
