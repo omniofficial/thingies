@@ -20,22 +20,22 @@ function renderTodos(sortedTodos) {
 
         // Create description portion of card
         const description = document.createElement("p");
-        description.textContent = todo.description;
+        description.textContent = `Description: ${todo.description}`;
         todoCard.appendChild(description);
 
         // Create dueDate portion of card
         const dueDate = document.createElement("p");
-        dueDate.textContent = todo.dueDate;
+        dueDate.textContent = `Due Date: ${todo.dueDate}`;
         todoCard.appendChild(dueDate);
 
         // Create priority portion of card
         const priority = document.createElement("p");
-        priority.textContent = todo.priority;
+        priority.textContent = `Priority: ${todo.priority}`;
         todoCard.appendChild(priority);
 
         // Create status portion of card
         const status = document.createElement("p");
-        status.textContent = todo.status;
+        status.textContent = `Status: ${todo.status}`;
         todoCard.appendChild(status);
 
         // Append card to #content
