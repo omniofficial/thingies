@@ -152,8 +152,23 @@ body {
     justify-content: center;
 }
 
+/* Section where task cards are displayed */
 #content {
     display: grid;
+    gap: 16px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.todo-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* ------------ FOOTER ------------*/

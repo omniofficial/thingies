@@ -42,8 +42,6 @@ function renderTodos(sortedTodos) {
         content.appendChild(todoCard);
         console.log("I looped");
     }
-
-    // Append content?
 }
 
 export { renderTodos };
