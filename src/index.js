@@ -1,42 +1,35 @@
-// Assets Import
 import pendingIcon from "./assets/pending_icon.svg";
 import completedIcon from "./assets/completed_icon.svg";
 import deletedIcon from "./assets/deleted_icon.svg";
 
-// Styling Import
 import "./styles.css";
-
-// Modules Import
 import { Todo, createTodo, deleteTodo, editTodo } from "./modules/todo";
+
 import {
     renderTodos,
+    renderProjectForm,
     renderProjectSidebar,
     renderProjectPage,
 } from "./modules/render";
 
-// ----------- Assets DOM Loading -----------
+import { projects, todos } from "./modules/state";
+
 document.querySelector("#pending-icon").src = pendingIcon;
 document.querySelector("#completed-icon").src = completedIcon;
 document.querySelector("#deleted-icon").src = deletedIcon;
 
 // ----------- MAIN LOGIC -----------
-let todos = [];
-
 // Create Project
 const addProjectBtn = document.querySelector("#addproject");
 
-addProjectBtn.addEventListener("click", () => {
+addProjectBtn.addEventListener("click", function (event) {
     // Pull out form
-
-    // Update data
-
-    // Call sidebar render function
-    renderProjectSidebar(data);
+    renderProjectForm();
 });
 
 // Render page when project is selected
 
-// Create TODO (OUTDATED, FIX)
+/* Create TODO (OUTDATED, FIX)
 const submitButton = document.querySelector("#submit_form");
 const form = document.querySelector("form");
 
@@ -69,7 +62,7 @@ submitButton.addEventListener("click", function (event) {
     // Call renderer
     renderTodos(todos);
 });
-
+*/
 // DOTHISLATER
 // User Actions (Add, delete, edit)
 // Event listener for if add / delete / edit button is clicked. Pass todo object.

@@ -1,7 +1,17 @@
-// Renders Sidebar with new project data
-function renderProjectSidebar();
+function renderProjectForm() {
+    console.log("renderProjectForm function ran");
 
-function renderProjectPage();
+    // Find content area
+}
+
+// Renders Sidebar with new project data
+function renderProjectSidebar() {
+    console.log("renderProjectForm function ran");
+}
+
+function renderProjectPage() {
+    console.log("renderProjectForm function ran");
+}
 
 // Renders TODOS for the currently selected project
 function renderTodos(sortedTodos) {
@@ -49,4 +59,9 @@ function renderTodos(sortedTodos) {
     }
 }
 
-export { renderTodos };
+export {
+    renderProjectForm,
+    renderProjectSidebar,
+    renderProjectPage,
+    renderTodos,
+};
