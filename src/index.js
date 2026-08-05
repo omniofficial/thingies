@@ -8,7 +8,11 @@ import "./styles.css";
 
 // Modules Import
 import { Todo, createTodo, deleteTodo, editTodo } from "./modules/todo";
-import { renderTodos } from "./modules/render";
+import {
+    renderTodos,
+    renderProjectSidebar,
+    renderProjectPage,
+} from "./modules/render";
 
 // ----------- Assets DOM Loading -----------
 document.querySelector("#pending-icon").src = pendingIcon;
@@ -18,7 +22,21 @@ document.querySelector("#deleted-icon").src = deletedIcon;
 // ----------- MAIN LOGIC -----------
 let todos = [];
 
-// Create TODO (REAL)
+// Create Project
+const addProjectBtn = document.querySelector("#addproject");
+
+addProjectBtn.addEventListener("click", () => {
+    // Pull out form
+
+    // Update data
+
+    // Call sidebar render function
+    renderProjectSidebar(data);
+});
+
+// Render page when project is selected
+
+// Create TODO (OUTDATED, FIX)
 const submitButton = document.querySelector("#submit_form");
 const form = document.querySelector("form");
 

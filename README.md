@@ -1,11 +1,5 @@
 TODO:
-Data mapping. Add projects functinality, each todo belongs to a specified project.
 
-Render page function. do a for loop. Maybe a rendering module.
+- Data mapping. Add projects functinality, each todo belongs to a specified project.
 
-RENDER.js:
-renderPage{
-loop through provided sorted array (paramater can be sorted by alphabetical order, due date, etc. Keep it general).
-
-Display todos dynamically on page.
-}
+- Check projects array. In each project array, have a list of todos? Then, pass this to the render function.

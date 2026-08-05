@@ -1,3 +1,8 @@
+// Renders Sidebar with new project data
+function renderProjectSidebar();
+
+function renderProjectPage();
+
 // Renders TODOS for the currently selected project
 function renderTodos(sortedTodos) {
     console.log("renderTodo's triggered");
