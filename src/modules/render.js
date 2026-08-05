@@ -1,7 +1,39 @@
 function renderProjectForm() {
     console.log("renderProjectForm function ran");
+    const content = document.querySelector("#main-content");
 
-    // Find content area
+    content.innerHTML = "";
+
+    // Create form
+    const form = document.createElement("form");
+    form.id = "project-form";
+
+    // Create title
+    const title = document.createElement("h2");
+    title.textContent = "Create New Project";
+    form.appendChild(title);
+
+    // Create label
+    const label = document.createElement("label");
+    label.textContent = "Project Name:";
+    label.setAttribute("for", "project-name");
+    form.appendChild(label);
+
+    // Create input
+    const input = document.createElement("input");
+    input.type = "text";
+    input.id = "project-name";
+    input.placeholder = "Enter project name";
+    form.appendChild(input);
+
+    // Create submit button
+    const button = document.createElement("button");
+    button.type = "submit";
+    button.textContent = "Create Project";
+    form.appendChild(button);
+
+    // Append form to content
+    content.appendChild(form);
 }
 
 // Renders Sidebar with new project data
@@ -13,7 +45,7 @@ function renderProjectPage() {
     console.log("renderProjectForm function ran");
 }
 
-// Renders TODOS for the currently selected project
+// FIX THIS: Renders TODOS for the currently selected project
 function renderTodos(sortedTodos) {
     console.log("renderTodo's triggered");
     console.log(sortedTodos); // for debugging
