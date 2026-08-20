@@ -1,3 +1,5 @@
+import { projects } from "./state";
+
 export class Project {
     constructor(name) {
         this.name = name;
@@ -12,6 +14,8 @@ export class Project {
 export function createProject(project_title) {
     console.log("createProject triggered");
     const project = new Project(project_title);
-    console.log(project);
+    projects.push(project);
+    console.log(projects);
+
     return project;
 }
