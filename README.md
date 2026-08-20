@@ -1,5 +1,6 @@
-TODO:
+DO NEXT:
 
-- Data mapping. Add projects functinality, each todo belongs to a specified project.
-
-- Check projects array. In each project array, have a list of todos? Then, pass this to the render function .
+- renderProjectSidebar with populated data within global array: projects
+- createTodo function. Obtain currentProject. 
+- renderProjectPage. Runs when specific project is clicked. Call renderProjectTitle, and renderTodos. 
+- renderTodos. 

@@ -58,17 +58,29 @@ function renderProjectSidebar(project_title) {
     // Append list element to div
 }
 
-function renderProjectPage() {
-    console.log("renderProjectForm function ran");
+function renderProjectPage(project) {
+    console.log("renderProjectPage function ran");
+    renderProjectTitle(project);
+    renderTodos(project);
+}
+
+function renderProjectTitle(project) {
+    const content = document.querySelector("#main-content");
+    console.log("renderProjectTitle function ran");
+
+    // Get title of selected project.
+
+    // Create project title div?
+
+    // Populate with title
+
+    // Append projectTitle div to content
 }
 
 // FIX THIS: Renders TODOS for the currently selected project
 function renderTodos(sortedTodos) {
-    console.log("renderTodo's triggered");
-    console.log(sortedTodos); // for debugging
-
     // Select content div ID
-    const content = document.querySelector("#content");
+    const content = document.querySelector("#main-content");
     content.innerHTML = ""; // clears whatever is in the #content div.
 
     // Loop through sorted array. Only call render TODO's with sorted array.
