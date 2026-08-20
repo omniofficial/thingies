@@ -65,7 +65,7 @@ function renderProjectPage(project) {
 }
 
 function renderProjectTitle(project) {
-    const content = document.querySelector("#main-content");
+    const content = document.querySelector("#project-title");
     console.log("renderProjectTitle function ran");
 
     // Get title of selected project.
@@ -80,7 +80,7 @@ function renderProjectTitle(project) {
 // FIX THIS: Renders TODOS for the currently selected project
 function renderTodos(sortedTodos) {
     // Select content div ID
-    const content = document.querySelector("#main-content");
+    const content = document.querySelector("#todo-list");
     content.innerHTML = ""; // clears whatever is in the #content div.
 
     // Loop through sorted array. Only call render TODO's with sorted array.
