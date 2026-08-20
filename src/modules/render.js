@@ -32,13 +32,31 @@ function renderProjectForm() {
     button.textContent = "Create Project";
     form.appendChild(button);
 
+    // Listener for form submit.
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const project_title = input.value;
+
+        createProject(project_title);
+
+        renderProjectSidebar(project_title);
+    });
+
     // Append form to content
     content.appendChild(form);
 }
 
 // Renders Sidebar with new project data
-function renderProjectSidebar() {
-    console.log("renderProjectForm function ran");
+function renderProjectSidebar(project_title) {
+    console.log("renderProjectSidebar function ran");
+    // Select project list div
+
+    // Create list element
+
+    // Title list element with project_title
+
+    // Append list element to div
 }
 
 function renderProjectPage() {

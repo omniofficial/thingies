@@ -21,13 +21,9 @@ document.querySelector("#deleted-icon").src = deletedIcon;
 // ----------- MAIN LOGIC -----------
 // Create Project
 const addProjectBtn = document.querySelector("#addproject");
-
 addProjectBtn.addEventListener("click", function (event) {
-    // Pull out form
     renderProjectForm();
 });
-
-// Render page when project is selected
 
 /* Create TODO (OUTDATED, FIX)
 const submitButton = document.querySelector("#submit_form");
