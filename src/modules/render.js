@@ -1,3 +1,5 @@
+import { createProject } from "./project";
+
 function renderProjectForm() {
     console.log("renderProjectForm function ran");
     const content = document.querySelector("#main-content");
@@ -35,12 +37,9 @@ function renderProjectForm() {
     // Listener for form submit.
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-
         const project_title = input.value;
-
-        createProject(project_title);
-
-        renderProjectSidebar(project_title);
+        const newProject = createProject(project_title);
+        renderProjectSidebar(newProject);
     });
 
     // Append form to content

@@ -8,3 +8,10 @@ export class Project {
         this.todos.push(todo);
     }
 }
+
+export function createProject(project_title) {
+    console.log("createProject triggered");
+    const project = new Project(project_title);
+    console.log(project);
+    return project;
+}
