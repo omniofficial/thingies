@@ -2,7 +2,7 @@ import { createProject } from "./project";
 
 function renderProjectForm() {
     console.log("renderProjectForm function ran");
-    const content = document.querySelector("#main-content");
+    const content = document.querySelector("#project-form");
 
     content.innerHTML = "";
 
@@ -39,6 +39,7 @@ function renderProjectForm() {
         event.preventDefault();
         const project_title = input.value;
         const newProject = createProject(project_title);
+        content.innerHTML = ""; // Clear sidebar once form is submitted
         renderProjectSidebar(newProject);
     });
 
@@ -60,7 +61,11 @@ function renderProjectSidebar(project_title) {
 
 function renderProjectPage(project) {
     console.log("renderProjectPage function ran");
+
+    // Populates title to section main
     renderProjectTitle(project);
+
+    // Populates todos to section main
     renderTodos(project);
 }
 
