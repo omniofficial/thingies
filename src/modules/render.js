@@ -1,4 +1,5 @@
 import { createProject } from "./project";
+import { projects } from "./state";
 
 function renderProjectForm() {
     console.log("renderProjectForm function ran");
@@ -40,23 +41,32 @@ function renderProjectForm() {
         const project_title = input.value;
         const newProject = createProject(project_title);
         content.innerHTML = ""; // Clear sidebar once form is submitted
-        renderProjectSidebar(newProject);
+        renderProjectSidebar(projects);
     });
 
     // Append form to content
     content.appendChild(form);
 }
 
-// Renders Sidebar with new project data
-function renderProjectSidebar(project_title) {
+// Renders Sidebar with all projects list data
+function renderProjectSidebar(projects) {
     console.log("renderProjectSidebar function ran");
+
     // Select project list div
+    const projectList = document.querySelector("#project-list");
 
-    // Create list element
+    projectList.innerHTML = "";
+    // Loop through each project. Create list element(s) for each project
+    for (const project of projects) {
+        const projectItem = document.createElement("button");
+        projectItem.textContent = project.name;
 
-    // Title list element with project_title
-
-    // Append list element to div
+        // For every project, add clickable event listener
+        projectItem.addEventListener("click", function () {
+            renderProjectPage(project);
+        });
+        projectList.appendChild(projectItem);
+    }
 }
 
 function renderProjectPage(project) {
