@@ -1,8 +1,7 @@
 DO NEXT:
 
-- createTodo function. Obtain currentProject. Add the todo to the currentProject todos.
+- renderTodoForm. Have it populate and grab data. Push data into createTodo function.
 
-- 
-- Finish renderProjectPage. Runs when specific project is clicked. Call renderProjectTitle, and renderTodos.
+- createTodo function. Add the todo to the project.todos. Call renderProjectTodos by passing project.todos paramater.
 
-- renderTodos.
+- renderProjectTodos. Takes project.todos as a paramater. Loop through project.todos list. Render everything.

@@ -72,12 +72,9 @@ function renderProjectSidebar(projects) {
 function renderProjectPage(project) {
     console.log("renderProjectPage function ran");
 
-    // Populates title to section main
     renderProjectTitle(project);
-
-    // Populates todos to section main
-    
-    // renderTodos(project);
+    renderTodoForm(project);
+    renderProjectTodos(project.todos);
 }
 
 function renderProjectTitle(project) {
@@ -97,7 +94,7 @@ function renderProjectTitle(project) {
 
 /*
 // FIX THIS: Renders TODOS for the currently selected project
-function renderTodos(sortedTodos) {
+function renderProjectTodos(sortedTodos) {
     // Select content div ID
     const content = document.querySelector("#todo-list");
     content.innerHTML = ""; // clears whatever is in the #content div.
