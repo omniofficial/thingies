@@ -15,8 +15,6 @@ export function createProject(project_title) {
     console.log("createProject triggered");
     const project = new Project(project_title);
     projects.push(project);
-    console.log(projects);
-    return project;
 }
 
 export function deleteProject(project) {

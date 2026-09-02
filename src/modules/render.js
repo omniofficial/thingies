@@ -38,8 +38,8 @@ function renderProjectForm() {
     // Listener for form submit.
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        const project_title = input.value;
-        const newProject = createProject(project_title);
+        const projectTitle = input.value;
+        createProject(projectTitle);
         content.innerHTML = ""; // Clear sidebar once form is submitted
         renderProjectSidebar(projects);
     });
@@ -61,7 +61,7 @@ function renderProjectSidebar(projects) {
         const projectItem = document.createElement("button");
         projectItem.textContent = project.name;
 
-        // For every project, add clickable event listener
+        // For every project, add clickable event listener. When clicked, render the project object associated with this button.
         projectItem.addEventListener("click", function () {
             renderProjectPage(project);
         });
@@ -76,22 +76,26 @@ function renderProjectPage(project) {
     renderProjectTitle(project);
 
     // Populates todos to section main
-    renderTodos(project);
+    
+    // renderTodos(project);
 }
 
 function renderProjectTitle(project) {
-    const content = document.querySelector("#project-title");
+    const projectTitleContainer = document.querySelector("#project-title");
     console.log("renderProjectTitle function ran");
+    projectTitleContainer.innerHTML = "";
 
-    // Get title of selected project.
-
-    // Create project title div?
+    // Create project title element
+    const titleElement = document.createElement("h1");
 
     // Populate with title
+    titleElement.textContent = project.name;
 
     // Append projectTitle div to content
+    projectTitleContainer.appendChild(titleElement);
 }
 
+/*
 // FIX THIS: Renders TODOS for the currently selected project
 function renderTodos(sortedTodos) {
     // Select content div ID
@@ -134,10 +138,5 @@ function renderTodos(sortedTodos) {
         console.log("I looped");
     }
 }
-
-export {
-    renderProjectForm,
-    renderProjectSidebar,
-    renderProjectPage,
-    renderTodos,
-};
+*/
+export { renderProjectForm, renderProjectSidebar, renderProjectPage };
