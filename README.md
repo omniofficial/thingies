@@ -1,7 +1,7 @@
 DO NEXT:
 
-- renderTodoForm. Have it populate and grab data. Push data into createTodo function.
+- Finish up the sort functions so that it actually sorts the todos. Do this under todo.js.
 
-- createTodo function. Add the todo to the project.todos. Call renderProjectTodos by passing project.todos paramater.
+- Display edit / delete options per todo. may need to edit renderTodos within the for loop.
 
-- renderProjectTodos. Takes project.todos as a paramater. Loop through project.todos list. Render everything.
+- After that, add a event listener for when anything gets edited or deleted (not sure where to put this yet). Call editTodo or deleteTodo. Call renderTodos.
