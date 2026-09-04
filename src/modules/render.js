@@ -273,6 +273,34 @@ function renderSort(todos) {
     const heading = document.createElement("h1");
     heading.textContent = "Sort Todos by: ";
 
+    // Sort dropdown
+    const select = document.createElement("select");
+
+    const alphabeticalOption = document.createElement("option");
+    alphabeticalOption.value = "alphabetical";
+    alphabeticalOption.textContent = "Alphabetical";
+
+    const dueDateOption = document.createElement("option");
+    dueDateOption.value = "duedate";
+    dueDateOption.textContent = "Alphabetical";
+
+    const priorityOption = document.createElement("option");
+    priorityOption.value = "priority";
+    priorityOption.textContent = "Alphabetical";
+
+    const statusOption = document.createElement("option");
+    statusOption.value = "status";
+    statusOption.textContent = "Alphabetical";
+
+    select.append(
+        alphabeticalOption,
+        dueDateOption,
+        priorityOption,
+        statusOption,
+    );
+
+    sortContainer.append(select);
+
     // Event listener for each sort function. If clicked, call sort.
 }
 
