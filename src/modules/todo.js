@@ -24,22 +24,38 @@ function createTodo(todo) {
     return tempTodo;
 }
 
-// Deletes a Todo
-function deleteTodo(todo) {
+function deleteTodo(todos) {
     console.log("deleteTodo triggered");
+
+    // todos pop?
+    renderTodos(todos);
 }
 
-// Edits a Todo
-function editTodo(todo) {
+function editTodo(todos) {
     console.log("editTodo triggered");
 }
 
-// Sort by Alphabetical Order
+function sortAlphabetical(todos) {
+    console.log("editTodo triggered");
 
-// Sort by Due Data
+    // renderTodos(todos);
+}
 
-// Sort by Priority
+function sortDueDate(todos) {
+    console.log("editTodo triggered");
 
-// Sort by Status
+    // renderTodos(todos);
+}
 
+function sortPriority(todos) {
+    console.log("editTodo triggered");
+
+    // renderTodos(todos);
+}
+
+function sortStatus(todos) {
+    console.log("editTodo triggered");
+
+    // renderTodos(todos);
+}
 export { createTodo, deleteTodo, editTodo };

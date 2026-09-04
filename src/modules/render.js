@@ -1,4 +1,5 @@
 import { createProject } from "./project";
+import { createTodo, sortA } from "./todo";
 import { projects } from "./state";
 
 function renderProjectForm() {
@@ -74,6 +75,7 @@ function renderProjectPage(project) {
     renderProjectTitle(project);
     renderTodoForm(project);
     renderTodos(project.todos);
+    renderSort(project.todos);
 }
 
 function renderProjectTitle(project) {
@@ -218,7 +220,8 @@ function renderTodoForm(project) {
         // Add the Todo the current project's todos array
         project.addTodo(newTodo);
 
-        // renderTodos(project.todos);
+        // Re renders list of todos
+        renderTodos(project.todos);
     });
 }
 
@@ -260,7 +263,17 @@ function renderTodos(sortedTodos) {
 
         // Append card to #content
         content.appendChild(todoCard);
-        console.log("I looped");
     }
 }
+
+function renderSort(todos) {
+    const sortContainer = document.querySelector("#sort-container");
+    sortContainer.innerHTML = "";
+
+    const heading = document.createElement("h1");
+    heading.textContent = "Sort Todos by: ";
+
+    // Event listener for each sort function. If clicked, call sort.
+}
+
 export { renderProjectForm };
