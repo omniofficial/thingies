@@ -71,10 +71,9 @@ function renderProjectSidebar(projects) {
 
 function renderProjectPage(project) {
     console.log("renderProjectPage function ran");
-
     renderProjectTitle(project);
     renderTodoForm(project);
-    renderProjectTodos(project.todos);
+    renderTodos(project.todos);
 }
 
 function renderProjectTitle(project) {
@@ -91,10 +90,139 @@ function renderProjectTitle(project) {
     // Append projectTitle div to content
     projectTitleContainer.appendChild(titleElement);
 }
+function renderTodoForm(project) {
+    const todoFormContainer = document.querySelector("#todo-form-container");
 
-/*
-// FIX THIS: Renders TODOS for the currently selected project
-function renderProjectTodos(sortedTodos) {
+    // Clear existing form
+    todoFormContainer.innerHTML = "";
+
+    // Create form
+    const form = document.createElement("form");
+    form.id = "todo-form";
+
+    // Create title
+    const title = document.createElement("h2");
+    title.textContent = `Add Todo to ${project.name}`;
+
+    // Title input
+    const titleLabel = document.createElement("label");
+    titleLabel.setAttribute("for", "todo_title");
+    titleLabel.textContent = "Title";
+
+    const titleInput = document.createElement("input");
+    titleInput.type = "text";
+    titleInput.id = "todo_title";
+    titleInput.name = "title";
+    titleInput.required = true;
+
+    // Description input
+    const descriptionLabel = document.createElement("label");
+    descriptionLabel.setAttribute("for", "todo_description");
+    descriptionLabel.textContent = "Description";
+
+    const descriptionInput = document.createElement("textarea");
+    descriptionInput.id = "todo_description";
+    descriptionInput.name = "description";
+
+    // Due date input
+    const dueDateLabel = document.createElement("label");
+    dueDateLabel.setAttribute("for", "todo_dueDate");
+    dueDateLabel.textContent = "Due Date";
+
+    const dueDateInput = document.createElement("input");
+    dueDateInput.type = "date";
+    dueDateInput.id = "todo_dueDate";
+    dueDateInput.name = "dueDate";
+
+    // Priority input
+    const priorityLabel = document.createElement("label");
+    priorityLabel.setAttribute("for", "priority");
+    priorityLabel.textContent = "Priority";
+
+    const priorityInput = document.createElement("select");
+    priorityInput.id = "priority";
+    priorityInput.name = "priority";
+
+    const lowOption = document.createElement("option");
+    lowOption.value = "low";
+    lowOption.textContent = "Low";
+
+    const mediumOption = document.createElement("option");
+    mediumOption.value = "medium";
+    mediumOption.textContent = "Medium";
+
+    const highOption = document.createElement("option");
+    highOption.value = "high";
+    highOption.textContent = "High";
+
+    priorityInput.append(lowOption, mediumOption, highOption);
+
+    // Status input
+    const statusLabel = document.createElement("label");
+    statusLabel.setAttribute("for", "status");
+    statusLabel.textContent = "Status";
+
+    const statusInput = document.createElement("select");
+    statusInput.id = "status";
+    statusInput.name = "status";
+
+    const incompleteOption = document.createElement("option");
+    incompleteOption.value = "incomplete";
+    incompleteOption.textContent = "Incomplete";
+
+    const completeOption = document.createElement("option");
+    completeOption.value = "complete";
+    completeOption.textContent = "Complete";
+
+    statusInput.append(incompleteOption, completeOption);
+
+    // Submit button
+    const submitButton = document.createElement("button");
+    submitButton.type = "submit";
+    submitButton.id = "submit_form";
+    submitButton.textContent = "Add Todo";
+
+    // Add elements to form
+    form.append(
+        title,
+        titleLabel,
+        titleInput,
+        descriptionLabel,
+        descriptionInput,
+        dueDateLabel,
+        dueDateInput,
+        priorityLabel,
+        priorityInput,
+        statusLabel,
+        statusInput,
+        submitButton,
+    );
+
+    // Add form to container
+    todoFormContainer.appendChild(form);
+
+    /* SUBMISION LOGIC */
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const formData = {
+            title: titleInput.value,
+            description: descriptionInput.value,
+            dueDate: dueDateInput.value,
+            priority: priorityInput.value,
+            status: statusInput.value,
+        };
+        // Create a Todo instance
+        const newTodo = createTodo(formData);
+
+        // Add the Todo the current project's todos array
+        project.addTodo(newTodo);
+
+        // renderTodos(project.todos);
+    });
+}
+
+function renderTodos(sortedTodos) {
     // Select content div ID
     const content = document.querySelector("#todo-list");
     content.innerHTML = ""; // clears whatever is in the #content div.
@@ -135,5 +263,4 @@ function renderProjectTodos(sortedTodos) {
         console.log("I looped");
     }
 }
-*/
-export { renderProjectForm, renderProjectSidebar, renderProjectPage };
+export { renderProjectForm };
