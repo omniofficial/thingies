@@ -36,26 +36,34 @@ function editTodo(todos) {
 }
 
 function sortAlphabetical(todos) {
-    console.log("editTodo triggered");
+    console.log("sortAlphabetical triggered");
 
     // renderTodos(todos);
 }
 
 function sortDueDate(todos) {
-    console.log("editTodo triggered");
+    console.log("sortDueDate triggered");
 
     // renderTodos(todos);
 }
 
 function sortPriority(todos) {
-    console.log("editTodo triggered");
+    console.log("sortPriority triggered");
 
     // renderTodos(todos);
 }
 
 function sortStatus(todos) {
-    console.log("editTodo triggered");
+    console.log("sortStatus triggered");
 
     // renderTodos(todos);
 }
-export { createTodo, deleteTodo, editTodo };
+export {
+    createTodo,
+    deleteTodo,
+    editTodo,
+    sortAlphabetical,
+    sortDueDate,
+    sortPriority,
+    sortStatus,
+};

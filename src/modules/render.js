@@ -1,6 +1,12 @@
 import { createProject } from "./project";
 import { createTodo, sortA } from "./todo";
 import { projects } from "./state";
+import {
+    sortAlphabetical,
+    sortDueDate,
+    sortPriority,
+    sortStatus,
+} from "./todo";
 
 function renderProjectForm() {
     console.log("renderProjectForm function ran");
@@ -282,15 +288,15 @@ function renderSort(todos) {
 
     const dueDateOption = document.createElement("option");
     dueDateOption.value = "duedate";
-    dueDateOption.textContent = "Alphabetical";
+    dueDateOption.textContent = "Due Date";
 
     const priorityOption = document.createElement("option");
     priorityOption.value = "priority";
-    priorityOption.textContent = "Alphabetical";
+    priorityOption.textContent = "Priority";
 
     const statusOption = document.createElement("option");
     statusOption.value = "status";
-    statusOption.textContent = "Alphabetical";
+    statusOption.textContent = "Status";
 
     select.append(
         alphabeticalOption,
@@ -301,7 +307,25 @@ function renderSort(todos) {
 
     sortContainer.append(select);
 
-    // Event listener for each sort function. If clicked, call sort.
+    // Watches if the value of the drop down changes. EX: select.value becomes "alphabetical" from "dueDate"
+    // event.target targets the specific select element.
+    select.addEventListener("change", function (event) {
+        if (event.target.value == "alphabetical") {
+            sortAlphabetical(todos);
+        }
+
+        if (event.target.value == "duedate") {
+            sortDueDate(todos);
+        }
+
+        if (event.target.value == "priority") {
+            sortPriority(todos);
+        }
+
+        if (event.target.value == "status") {
+            sortStatus(todos);
+        }
+    });
 }
 
 export { renderProjectForm };
