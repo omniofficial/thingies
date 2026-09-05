@@ -20,6 +20,7 @@ function createTodo(todo) {
         todo.status,
     );
 
+    console.log(tempTodo);
     // Return the created todo object
     return tempTodo;
 }
@@ -37,6 +38,17 @@ function editTodo(todos) {
 
 function sortAlphabetical(todos) {
     console.log("sortAlphabetical triggered");
+
+    for (const todo of todos) {
+    }
+
+    const testTodos = [
+        { title: "Zebra" },
+        { title: "Apple" },
+        { title: "Monkey" },
+    ];
+
+    sortAlphabetical(testTodos);
 
     // renderTodos(todos);
 }
