@@ -6,6 +6,7 @@ import {
 } from "./todo";
 
 function testAlphabetical() {
+    console.log("testAlphabetical triggered");
     const testTodos = [
         { title: "Zebra" },
         { title: "Apple" },
@@ -27,9 +28,9 @@ function testDueDate() {
 
 function testPriority() {
     const testTodos = [
-        { title: "medium" },
-        { title: "low" },
-        { title: "high" },
+        { priority: "medium" },
+        { priority: "low" },
+        { priority: "high" },
     ];
 
     sortPriority(testTodos);
@@ -40,5 +41,10 @@ function testStatus() {
 
     sortStatus(testTodos);
 }
+
+// testAlphabetical();
+// testDueDate();
+testPriority();
+// testStatus();
 
 export { testAlphabetical, testDueDate, testPriority, testStatus };

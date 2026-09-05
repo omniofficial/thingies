@@ -5,6 +5,7 @@ import deletedIcon from "./assets/deleted_icon.svg";
 import "./styles.css";
 
 import { renderProjectForm } from "./modules/render";
+import "./modules/test";
 
 document.querySelector("#pending-icon").src = pendingIcon;
 document.querySelector("#completed-icon").src = completedIcon;

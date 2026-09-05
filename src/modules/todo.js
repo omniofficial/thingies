@@ -1,3 +1,5 @@
+import { renderTodos } from "./render";
+
 export class Todo {
     constructor(title, description, dueDate, priority, status) {
         this.id = crypto.randomUUID();
@@ -37,38 +39,54 @@ function editTodo(todos) {
 }
 
 function sortAlphabetical(todos) {
-    console.log("sortAlphabetical triggered");
+    todos.sort((todo1, todo2) => {
+        todo1.title.localeCompare(todo2.title);
+    });
 
-    for (const todo of todos) {
-    }
-
-    const testTodos = [
-        { title: "Zebra" },
-        { title: "Apple" },
-        { title: "Monkey" },
-    ];
-
-    sortAlphabetical(testTodos);
-
-    // renderTodos(todos);
+    renderTodos(todos);
 }
 
 function sortDueDate(todos) {
-    console.log("sortDueDate triggered");
+    todos.sort((todo1, todo2) => {
+        new Date(todo1.dueDate) - new Date(todo2.dueDate);
+    });
 
-    // renderTodos(todos);
+    renderTodos(todos);
 }
 
 function sortPriority(todos) {
-    console.log("sortPriority triggered");
+    todos.sort((todo1, todo2) => {
+        // Grab numerical values for each rank.
+        let todo1Value = priorityRank(todo1.priority);
+        let todo2Value = priorityRank(todo2.priority);
 
-    // renderTodos(todos);
+        // Sort ordering. EX: todo1 = 3, todo2 = 2. Need negative number.
+        return todo2Value - todo1Value;
+    });
+
+    renderTodos(todos);
+}
+
+function priorityRank(priorityString) {
+    // priorityString can be "low", "medium", or "high"
+
+    let value = 0;
+
+    if (priorityString == "low") {
+        value = 1;
+    } else if (priorityString == "medium") {
+        value = 2;
+    } else if (priorityString == "high") {
+        value = 3;
+    }
+
+    return value;
 }
 
 function sortStatus(todos) {
     console.log("sortStatus triggered");
 
-    // renderTodos(todos);
+    renderTodos(todos);
 }
 export {
     createTodo,

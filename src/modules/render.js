@@ -328,4 +328,4 @@ function renderSort(todos) {
     });
 }
 
-export { renderProjectForm };
+export { renderProjectForm, renderTodos };
