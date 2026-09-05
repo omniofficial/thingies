@@ -37,14 +37,21 @@ function testPriority() {
 }
 
 function testStatus() {
-    const testTodos = [{ status: "complete" }, { status: "incomplete" }];
+    const testTodos = [
+        { status: "complete" },
+        { status: "incomplete" },
+        { status: "complete" },
+        { status: "incomplete" },
+        { status: "complete" },
+        { status: "incomplete" },
+    ];
 
     sortStatus(testTodos);
 }
 
 // testAlphabetical();
 // testDueDate();
-testPriority();
-// testStatus();
+// testPriority();
+testStatus();
 
 export { testAlphabetical, testDueDate, testPriority, testStatus };

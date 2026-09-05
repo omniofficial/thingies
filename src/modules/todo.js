@@ -51,6 +51,7 @@ function sortDueDate(todos) {
         new Date(todo1.dueDate) - new Date(todo2.dueDate);
     });
 
+    // Reformats new Date format "" back to "2026-07-20" format
     renderTodos(todos);
 }
 
@@ -84,9 +85,29 @@ function priorityRank(priorityString) {
 }
 
 function sortStatus(todos) {
-    console.log("sortStatus triggered");
+    // Grab numerical value for each priority. Assign weight.
+    todos.sort((todo1, todo2) => {
+        // Grab numerical values for each rank.
+        let todo1Value = statusRank(todo1.status);
+        let todo2Value = statusRank(todo2.status);
+
+        // Sort ordering. EX: todo1Value = 1 (complete), todo2Value = 2 (incomplete). Incomplete takes priority
+        return todo2Value - todo1Value;
+    });
 
     renderTodos(todos);
+}
+
+function statusRank(statusString) {
+    let value = 0;
+
+    if (statusString == "complete") {
+        value = 1;
+    } else if (statusString == "incomplete") {
+        value = 2;
+    }
+
+    return value;
 }
 export {
     createTodo,
