@@ -16,11 +16,3 @@ export function createProject(project_title) {
     const project = new Project(project_title);
     projects.push(project);
 }
-
-export function deleteProject(project) {
-    console.log("deleteProject triggered");
-}
-
-export function editProjectName(newProjectName, project) {
-    console.log("editProject triggered");
-}

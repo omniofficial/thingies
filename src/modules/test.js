@@ -52,6 +52,6 @@ function testStatus() {
 // testAlphabetical();
 // testDueDate();
 // testPriority();
-testStatus();
+// testStatus();
 
 export { testAlphabetical, testDueDate, testPriority, testStatus };

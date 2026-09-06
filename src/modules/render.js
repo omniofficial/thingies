@@ -1,5 +1,5 @@
 import { createProject } from "./project";
-import { createTodo, sortA } from "./todo";
+import { createTodo, editTodo, deleteTodo } from "./todo";
 import { projects } from "./state";
 import {
     sortAlphabetical,
@@ -266,6 +266,23 @@ function renderTodos(sortedTodos) {
         const status = document.createElement("p");
         status.textContent = `Status: ${todo.status}`;
         todoCard.appendChild(status);
+
+        const editButton = document.createElement("button");
+        editButton.textContent = `Edit`;
+        todoCard.appendChild(editButton);
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = `Delete`;
+        todoCard.appendChild(deleteButton);
+
+        // Event Listeners for both editButton and deleteButton
+        editButton.addEventListener("click", function () {
+            editTodo(todo, todoCard, sortedTodos);
+        });
+
+        deleteButton.addEventListener("click", function () {
+            deleteTodo(todo);
+        });
 
         // Append card to #content
         content.appendChild(todoCard);

@@ -26,16 +26,40 @@ function createTodo(todo) {
     // Return the created todo object
     return tempTodo;
 }
+function editTodo(todo, todoCard, todos) {
+    console.log("editTodo triggered");
 
-function deleteTodo(todos) {
+    const title = todoCard.querySelector("h2");
+    const titleInput = document.createElement("input");
+    titleInput.value = todo.title;
+
+    // Replaces existing title with an input box.
+    title.replaceWith(titleInput);
+
+    // Creation of cancel and submit buttons while editing
+    const cancelButton = document.createElement("button");
+    cancelButton.textContent = `Cancel`;
+    todoCard.appendChild(cancelButton);
+
+    const submitButton = document.createElement("button");
+    submitButton.textContent = `Submit`;
+    todoCard.appendChild(submitButton);
+
+    // Event Listeners for both cancelEditButton and deleteButton
+    cancelButton.addEventListener("click", function () {
+        renderTodos(todos);
+    });
+
+    submitButton.addEventListener("click", function () {
+        // blank
+    });
+}
+
+function deleteTodo(todo) {
     console.log("deleteTodo triggered");
 
     // todos pop?
-    renderTodos(todos);
-}
-
-function editTodo(todos) {
-    console.log("editTodo triggered");
+    // renderTodos(todos);. Pass new todos array.
 }
 
 function sortAlphabetical(todos) {
@@ -109,6 +133,7 @@ function statusRank(statusString) {
 
     return value;
 }
+
 export {
     createTodo,
     deleteTodo,
