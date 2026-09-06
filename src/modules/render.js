@@ -244,26 +244,31 @@ function renderTodos(sortedTodos) {
 
         // Create title portion of card
         const title = document.createElement("h2");
+        title.classList.add("todo-title");
         title.textContent = todo.title;
         todoCard.appendChild(title);
 
         // Create description portion of card
         const description = document.createElement("p");
+        description.classList.add("todo-description");
         description.textContent = `Description: ${todo.description}`;
         todoCard.appendChild(description);
 
         // Create dueDate portion of card
         const dueDate = document.createElement("p");
+        dueDate.classList.add("todo-due-date");
         dueDate.textContent = `Due Date: ${todo.dueDate}`;
         todoCard.appendChild(dueDate);
 
         // Create priority portion of card
         const priority = document.createElement("p");
+        priority.classList.add("todo-priority");
         priority.textContent = `Priority: ${todo.priority}`;
         todoCard.appendChild(priority);
 
         // Create status portion of card
         const status = document.createElement("p");
+        status.classList.add("todo-status");
         status.textContent = `Status: ${todo.status}`;
         todoCard.appendChild(status);
 
@@ -275,7 +280,7 @@ function renderTodos(sortedTodos) {
         deleteButton.textContent = `Delete`;
         todoCard.appendChild(deleteButton);
 
-        // Event Listeners for both editButton and deleteButton
+        // Event Listeners for both editButton and deleteButton. Holds reference to one object inside the project.todos array.
         editButton.addEventListener("click", function () {
             editTodo(todo, todoCard, sortedTodos);
         });

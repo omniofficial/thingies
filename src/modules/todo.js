@@ -26,15 +26,41 @@ function createTodo(todo) {
     // Return the created todo object
     return tempTodo;
 }
+
+// Edit a single todo within the project.todos array
 function editTodo(todo, todoCard, todos) {
     console.log("editTodo triggered");
 
-    const title = todoCard.querySelector("h2");
-    const titleInput = document.createElement("input");
-    titleInput.value = todo.title;
-
+    // Title Editing
+    const title = todoCard.querySelector(".todo-title");
+    const titleInputBox = document.createElement("input");
+    titleInputBox.value = todo.title;
     // Replaces existing title with an input box.
-    title.replaceWith(titleInput);
+    title.replaceWith(titleInputBox);
+
+    // Description Editing
+    const description = todoCard.querySelector(".todo-description");
+    const descriptionInputBox = document.createElement("input");
+    descriptionInputBox.value = todo.description;
+    description.replaceWith(descriptionInputBox);
+
+    // Due Date Editing
+    const dueDate = todoCard.querySelector(".todo-due-date");
+    const dueDateInputBox = document.createElement("input");
+    dueDateInputBox.value = todo.dueDate;
+    dueDate.replaceWith(dueDateInputBox);
+
+    // Priority Editing
+    const priority = todoCard.querySelector(".todo-priority");
+    const priorityInputBox = document.createElement("input");
+    priorityInputBox.value = todo.priority;
+    priority.replaceWith(priorityInputBox);
+
+    // Status Editing
+    const status = todoCard.querySelector(".todo-status");
+    const statusInputBox = document.createElement("input");
+    statusInputBox.value = todo.status;
+    status.replaceWith(statusInputBox);
 
     // Creation of cancel and submit buttons while editing
     const cancelButton = document.createElement("button");
@@ -45,16 +71,26 @@ function editTodo(todo, todoCard, todos) {
     submitButton.textContent = `Submit`;
     todoCard.appendChild(submitButton);
 
-    // Event Listeners for both cancelEditButton and deleteButton
+    // Event Listeners for both cancelEditButton and deleteButton.
     cancelButton.addEventListener("click", function () {
         renderTodos(todos);
     });
 
     submitButton.addEventListener("click", function () {
-        // blank
+        // Take the existing input. Take any new input and transfer it to my todo object that I am currently tracking.
+
+        // Reassignments to todo properties
+        todo.title = titleInputBox.value;
+        todo.description = descriptionInputBox.value;
+        todo.dueDate = dueDateInputBox.value;
+        todo.priority = priorityInputBox.value;
+        todo.status = statusInputBox.value;
+
+        renderTodos(todos);
     });
 }
 
+// Delete a single todo within the project.todos array
 function deleteTodo(todo) {
     console.log("deleteTodo triggered");
 
